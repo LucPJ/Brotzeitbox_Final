@@ -4,7 +4,7 @@ import { addLebensmittelToList } from '../../controller/FetchLebensmittel';
 import './main.css';
 
 
-export default function LebensmittelCard({lebensmittelId, kalorien, title, imgSrc, imgAlt, kategorie}){
+export default function LebensmittelCard({setMySelectedItem, lebensmittelId, kalorien, title, imgSrc, imgAlt, kategorie}){
 
     const selectedLebensmittel = {
         id: lebensmittelId,
@@ -18,6 +18,8 @@ export default function LebensmittelCard({lebensmittelId, kalorien, title, imgSr
         
         addLebensmittelToList(selectedLebensmittel);
         localStorage.setItem("lebensmittel", JSON.stringify(selectedLebensmittel))
+        // speicher in state
+        setMySelectedItem(selectedLebensmittel)
     }
 
     //const customLink = `/lebensmittel/${title}`

@@ -10,7 +10,9 @@ export default function Lebensmittel(){
 
     const [lebensmittelItems, setLebensmittelItems] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const [mySelectedItem, setMySelectedItem] = useState([]) //helfer state frü rerender
 
+    
     async function getAllLebensmittelData(){
         setIsLoading(true)
         const data = await getLebensmittel('lebensmittel');  
@@ -33,7 +35,7 @@ export default function Lebensmittel(){
 
         return(
             <>
-                <LebensmittelCard key={keyID} title={item.fields.lebensmittel} kalorien={item.fields.kalorien} lebensmittelId={keyID} imgSrc={item.fields.lebensmittelBild.fields.lebensmittelBild.fields.file.url} alt={item.fields.lebensmittelBild.fields.bildname} kategorie={item.fields.kategorien.fields.kategorien}/>
+                <LebensmittelCard key={keyID} setMySelectedItem={setMySelectedItem} title={item.fields.lebensmittel} kalorien={item.fields.kalorien} lebensmittelId={keyID} imgSrc={item.fields.lebensmittelBild.fields.lebensmittelBild.fields.file.url} alt={item.fields.lebensmittelBild.fields.bildname} kategorie={item.fields.kategorien.fields.kategorien}/>
             </>
         )
 
@@ -43,7 +45,7 @@ export default function Lebensmittel(){
         
         <div className='lebensmittel'>            
             {lebensmittelListe}
-            <LebensmittelListe />
+            <LebensmittelListe mySelectedItem={mySelectedItem}/>
         </div>
     )
 }

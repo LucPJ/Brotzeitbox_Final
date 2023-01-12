@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { createdLebensmittelListe } from '../../controller/FetchLebensmittel';
 import LebensmittelListeCard from './LebensmittelListeCard';
-
-export default function LebensmittelListe(){
+import {gesamtKalorien} from '../../controller/kalorienController'
+export default function LebensmittelListe({mySelectedItem}){
 
     const [lebensmittelListe, setLebensmittelListe] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-
+    const [maxKalorien, setMaxKalorien] = useState(150)
 /*     async function getLebensmittelListe(){
         setIsLoading(true)
         const dataList = await createdLebensmittelListe(data);
@@ -23,7 +23,7 @@ export default function LebensmittelListe(){
         .then((res) => res.json())
         .then((data) => setLebensmittelListe(data))
         setIsLoading(false)
-    }, []);
+    }, [mySelectedItem]);
 
     if(isLoading){
         return <div>loading...</div>
@@ -31,8 +31,19 @@ export default function LebensmittelListe(){
 
     console.log(lebensmittelListe)
 
-    const ausgabeListe = lebensmittelListe.map((item) => {
+    function kalorienRechner(kalorien){
 
+
+    
+
+    }
+
+    const myKalorien = []
+    const ausgabeListe = lebensmittelListe.map((item) => {
+ //calucluation der verbrauchten kalorien in state speichern
+        
+        myKalorien.push(item.kalorien)
+        
         const keyID= item._id
 
         return(       
@@ -42,10 +53,8 @@ export default function LebensmittelListe(){
         )
     })
 
-    function kalorienRechner(kalorien){
-        const gesamtKalorien = kalorien;
-
-    }
+        const kalorienGesamt = gesamtKalorien(myKalorien)   
+   
 
 
     return(
@@ -53,7 +62,7 @@ export default function LebensmittelListe(){
             <h3>Meine Liste</h3>
             {ausgabeListe}
             <button onClick={kalorienRechner}>Kalorien rechnen</button>
-            <p>Gesamtkalorien: </p>
+            <p>Gesamtkalorien: {kalorienGesamt} / {maxKalorien}</p>
         </div>
     )
 }
