@@ -1,0 +1,6 @@
+#backend
+/Brotzeitbox_Backend/node_modules
+/Brotzeitbox_Backend/.env
+#frontend
+/Brotzeitbox_Frontend/node_modules
+/Brotzeitbox_Frontend/.env

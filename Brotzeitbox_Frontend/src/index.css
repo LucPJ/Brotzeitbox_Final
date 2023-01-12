@@ -1,0 +1,19 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-family: 'Cabin', sans-serif;
+  font-family: 'Work Sans', sans-serif;
+
+  --color-primary: #3699E2;
+  --color-secondary: #F4C34D;
+  --color-tertiary: #DC3C4D;
+  --color-dark: #2E2E2E;
+  --color-light: #f8FBFD;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+

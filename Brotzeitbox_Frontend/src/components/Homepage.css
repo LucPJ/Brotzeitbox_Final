@@ -1,0 +1,80 @@
+.header{
+    display: flex;
+    width: 100%;
+    min-height: 30px;
+    height: auto;
+    justify-content: space-around;
+    padding: auto;
+    margin: 2em;
+}
+
+.nav{
+    background-color: var(--color-secondary);
+    display: flex;
+    width: 100%;
+    min-height: 30px;
+    height: auto;
+    justify-content: space-around;
+    padding: 1em;
+    color: var(--color-light);
+}
+
+.title{
+    padding: 1em 1em 0 1em;
+    margin: 1em auto 0.5em 1em;
+}
+
+.description{
+    padding: 0em 1.25em;
+    margin: 0em auto 0.5em 1em;
+    font-size: 1.75em;
+}
+
+/* .nav a:link{
+    color: var(--color-light);
+}
+ */
+.footer {
+    width: 100%;
+    min-height: 30px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-primary);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    color: var(--color-light);
+}
+
+.footer-items{
+    padding: auto 2em;
+    margin: auto 5em;
+    list-style: none;
+    font-weight: 500;
+    font-size: 1.25em;
+}
+
+.lebensmittel-list-card{
+    width: 25em;
+    height: 50vh;
+    background-color: var(--color-secondary);  
+    color: var(--color-light);  
+    border-radius: 5px;
+    position: fixed;
+    right: 0;
+    top: 220px;
+}
+
+.lebensmittel-list-card h3{
+    padding: 1em;
+}
+
+.lebensmittel-list{
+    padding: 2px 1.5em;
+    margin: auto 2em;
+    font-weight: 500;
+    font-size: 1em;    
+    padding-inline-start: 0;
+}
