@@ -9,12 +9,12 @@ export default function Homepage(){
 
     return(
         <>
-        <Header />
-        <Navigation/>
-        <h1 className='title'>Brotzeitbox</h1>
-        <p className='description'>Was nehme ich heute in der Schule?</p>
-        {/* <Footer /> */}
-        <Outlet/>
+            <Header />
+            <Navigation/>
+                <h1 className='title'>Brotzeitbox</h1>
+                <p className='description'>Was nehme ich heute in der Schule?</p>
+            <Outlet/>
+            <Footer />
         </>
     )
 }

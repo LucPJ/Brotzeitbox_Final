@@ -3,7 +3,6 @@ import { getLebensmittel } from '../../controller/FetchLebensmittel';
 import Navigation from '../Navigation';
 import LebensmittelListe from './LebensmittelListe';
 import './main.css';
-
 import LebensmittelCard from './LebensmittelCard';
 
 export default function Lebensmittel(){

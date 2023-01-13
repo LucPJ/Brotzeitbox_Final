@@ -31,7 +31,7 @@ export default function Header(){
         const keyID= item.sys.id;
 
         return( 
-            <HeaderItems key={keyID} title={item.fields.headertext} /* imgSrc={item.fields.icon.fields.file.url} */ />
+            <HeaderItems key={keyID} title={item.fields.headertext} imgSrc={item.fields.icon?.fields.file.url} />
         )
     })
 
