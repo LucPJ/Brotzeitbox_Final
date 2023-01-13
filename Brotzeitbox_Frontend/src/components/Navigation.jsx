@@ -5,7 +5,7 @@ import './Homepage.css'
 export default function Navigation(){
     return(
       <div className="nav" >
-         <Link to="/">Home</Link>
+        <Link to="/">Home</Link>
         <Link to="/lebensmittel">Lebensmittel</Link>
         <Link to="/kategorien">Kategorien</Link>
       </div>  

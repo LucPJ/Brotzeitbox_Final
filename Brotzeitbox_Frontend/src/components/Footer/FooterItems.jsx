@@ -1,14 +1,15 @@
 import React from 'react';
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function HeaderItems({title}){
     
-    //const customLink = `/kategorien/${titleFormated}`
+    const customLink = `/footer/${title}`
+    
     return(
         <ul className='footer-items'>
-            {/* <Link to={customLink}> */}
+            <Link to={customLink}>
                 <li>{title}</li>
-            {/* </Link> */}
+            </Link>
         </ul>
     )
 }

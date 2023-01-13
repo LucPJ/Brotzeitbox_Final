@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { createdLebensmittelListe } from '../../controller/FetchLebensmittel';
 import LebensmittelListeCard from './LebensmittelListeCard';
 import {gesamtKalorien} from '../../controller/kalorienController'
+
+
 export default function LebensmittelListe({mySelectedItem}){
 
     const [lebensmittelListe, setLebensmittelListe] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [maxKalorien, setMaxKalorien] = useState(150)
-/*     async function getLebensmittelListe(){
+
+    /*     async function getLebensmittelListe(){
         setIsLoading(true)
         const dataList = await createdLebensmittelListe(data);
         setLebensmittelListe(dataList)
@@ -18,6 +21,7 @@ export default function LebensmittelListe({mySelectedItem}){
         }, [])
     }
  */    
+
     useEffect(()=>{
         fetch('http://localhost:3000/lebensmittel')
         .then((res) => res.json())
@@ -29,14 +33,7 @@ export default function LebensmittelListe({mySelectedItem}){
         return <div>loading...</div>
     }
 
-    console.log(lebensmittelListe)
-
-    function kalorienRechner(kalorien){
-
-
-    
-
-    }
+    console.log('lebensmittel liste!', lebensmittelListe)
 
     const myKalorien = []
     const ausgabeListe = lebensmittelListe.map((item) => {
@@ -61,8 +58,7 @@ export default function LebensmittelListe({mySelectedItem}){
         <div className='lebensmittel-list-card'>
             <h3>Meine Liste</h3>
             {ausgabeListe}
-            <button onClick={kalorienRechner}>Kalorien rechnen</button>
-            <p>Gesamtkalorien: {kalorienGesamt} / {maxKalorien}</p>
+            <h3>Gesamtkalorien: {kalorienGesamt} / {maxKalorien}</h3>
         </div>
     )
 }
