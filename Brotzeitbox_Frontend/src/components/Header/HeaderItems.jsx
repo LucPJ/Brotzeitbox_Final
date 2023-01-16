@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-export default function HeaderItems({title, imgSrc, imgAlt, }){
+export default function HeaderItems({title, imgSrc, imgAlt}){
     
     const customLink = `/${title}`
     

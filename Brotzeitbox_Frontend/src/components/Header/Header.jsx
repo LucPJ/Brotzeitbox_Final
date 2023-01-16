@@ -24,14 +24,14 @@ export default function Header(){
         return <div>loading...</div>
     }
 
-    //console.log(headerItems)
+    console.log("header items", headerItems)
 
     const header = headerItems.map((item) => {
         
         const keyID= item.sys.id;
 
         return( 
-            <HeaderItems key={keyID} title={item.fields.headertext} imgSrc={item.fields.icon?.fields.file.url} />
+            <HeaderItems key={keyID} title={item.fields.headertext} text={item.fields.headerBeschreibung} imgSrc={item.fields.icon?.fields.file.url} />
         )
     })
 

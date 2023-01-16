@@ -1,15 +1,16 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import KontaktFormular from './KontaktFormular';
 
 export default function HeaderItemsDetails({title}){
 
     const {id} = useParams();
 
     return(
-        <div>
+        <div className='kontakt-formular'>
             <h1>{id}</h1>
-            <p>Das ist den ID: {id} mit title</p><br/>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit in saepe ipsa magni quia adipisci voluptas eligendi corporis officia temporibus a dolorem, quod delectus quisquam nihil eaque beatae sit eius.</p>
+            <p>Lass uns bitte eine Nachricht</p><br/>
+            <KontaktFormular />
         </div>
     )
 }

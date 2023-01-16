@@ -42,9 +42,13 @@ export default function Lebensmittel(){
 
     return(
         
-        <div className='lebensmittel'>            
-            {lebensmittelListe}
-            <LebensmittelListe mySelectedItem={mySelectedItem}/>
+        <div id='lebensmittel-seite'>     
+            <div className='lebensmittel'>       
+                {lebensmittelListe}
+            </div>
+            <div id='sidebar'>
+                <LebensmittelListe mySelectedItem={mySelectedItem}/>
+            </div>
         </div>
     )
 }

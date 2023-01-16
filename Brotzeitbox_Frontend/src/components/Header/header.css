@@ -1,0 +1,17 @@
+.header-description{
+    width: 60%;
+    margin: 3em auto;
+    height: auto;
+}
+
+.header-description p{
+    padding: 1em;
+    margin: 0.5em 1.2em;
+    font-size: 1.6em;
+    font-weight: 300;
+}
+
+.header-description h1{
+    padding-left: 1.7em;
+}
+
