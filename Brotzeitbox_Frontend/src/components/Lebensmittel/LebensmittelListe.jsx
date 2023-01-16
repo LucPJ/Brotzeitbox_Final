@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { createdLebensmittelListe } from '../../controller/FetchLebensmittel';
 import LebensmittelListeCard from './LebensmittelListeCard';
 import {gesamtKalorien} from '../../controller/kalorienController'
-
+import './main.css';
 
 export default function LebensmittelListe({mySelectedItem}){
 
@@ -37,7 +37,8 @@ export default function LebensmittelListe({mySelectedItem}){
 
     const myKalorien = []
     const ausgabeListe = lebensmittelListe.map((item) => {
- //calucluation der verbrauchten kalorien in state speichern
+ 
+     //calucluation der verbrauchten kalorien in state speichern
         
         myKalorien.push(item.kalorien)
         
@@ -51,14 +52,24 @@ export default function LebensmittelListe({mySelectedItem}){
     })
 
         const kalorienGesamt = gesamtKalorien(myKalorien)   
+        
+        const kalorienWarnung = maxKalorien 
+        
+/*          if(kalorienWarnung  < kalorienGesamt){
+            return <div style={{backgroundColor: "red"}}>mal</div>
+        }else if(kalorienWarnung + 10 > kalorienGesamt > kalorienWarnung - 10){
+            return <div style={{backgroundColor: "yellow"}}>cuidado</div>
+        }else{
+            return <div style={{backgroundColor: "green"}}>bien</div>
+        }
+ */
    
-
-
     return(
         <div className='lebensmittel-list-card'>
             <h3>Meine Liste</h3>
             {ausgabeListe}
             <h3>Gesamtkalorien: {kalorienGesamt} / {maxKalorien}</h3>
+            <div>{kalorienWarnung}</div>
         </div>
     )
 }
