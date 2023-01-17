@@ -23,6 +23,7 @@ import FooterItemsDetails from "../components/Footer/FooterItemsDetails"
       {/* <Route index element={<HomePage/>}> */}
         <Route path="/:id" element={<HeaderItemsDetails />} />
         <Route path="/lebensmittel" element={<Lebensmittel />} />
+        <Route path="/lebensmittel/:search" element={<Lebensmittel />} />
         <Route path="/lebensmittel/:lebensmittel" element={<LebensmittelDetails />} />
         <Route path="/kategorien" element={<KategorienListe />} />
         <Route path="/kategorien/:kategorie" element={<KategorieFiltered />} />
