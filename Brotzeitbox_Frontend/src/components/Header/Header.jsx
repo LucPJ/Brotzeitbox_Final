@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import { getLebensmittel } from '../../controller/FetchLebensmittel';
 import '../Homepage.css'
+import Searchbar from '../Searchbar/Searchbar';
 import HeaderItems from './HeaderItems';
 
 
-export default function Header(){
+export default function Header({setSearchTerm}){
 
     const [headerItems, setHeaderItems] = useState([])
     const [isLoading, setIsLoading] = useState(false)
@@ -24,21 +25,21 @@ export default function Header(){
         return <div>loading...</div>
     }
 
-    //console.log(headerItems)
+    //console.log("header items", headerItems)
 
     const header = headerItems.map((item) => {
         
         const keyID= item.sys.id;
 
         return( 
-            <HeaderItems key={keyID} title={item.fields.headertext} imgSrc={item.fields.icon?.fields.file.url} />
+            <HeaderItems key={keyID} title={item.fields.headertext} text={item.fields.headerBeschreibung} imgSrc={item.fields.icon?.fields.file.url} />
         )
     })
 
     return(
         <div className="header">
             {header}
+            <Searchbar setSearchTerm={setSearchTerm}/>
         </div>
-
     )
 }

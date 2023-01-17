@@ -1,0 +1,57 @@
+.kontakt-formular{
+    display: block;
+    width: 80%;
+    height: auto;
+    margin: 2.5em auto;
+}
+
+.kontakt-formular p{
+    font-size: 26px;
+    padding-top: 1em;
+}
+
+.kontakt-formular-form{
+    width: 80%;
+    margin: 0 auto;
+}
+
+#name, #email{
+    box-shadow: 0 15px 30px rgba(0,0,0,0.30), 0 11px 8px rgba(0,0,0,0.22);
+    width: 40em;
+    height: 3em;
+    margin: 0.5em;
+    border: solid 1px var(--color-light);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 18px;
+    padding-left: 1em;
+}
+
+#nachricht{
+    box-shadow: 0 15px 30px rgba(0,0,0,0.30), 0 11px 8px rgba(0,0,0,0.22);
+    width: 40em;
+    height: 12em;
+    margin: 0.5em;
+    border: solid 1px var(--color-light);  
+    font-family: 'Work Sans', sans-serif;
+    font-size: 18px;
+    padding-left: 1em ;
+}
+
+#btn {
+    align-items: flex-end;
+    background-color: var(--color-secondary);
+    border: none;
+    color: var(--color-light);
+    height: 30px;
+    width: 120px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    margin: 1em;
+}
+
+.btn:hover{
+    background-color: var(--color-tertiary);
+}

@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { createdLebensmittelListe } from '../../controller/FetchLebensmittel';
 import LebensmittelListeCard from './LebensmittelListeCard';
 import {gesamtKalorien} from '../../controller/kalorienController'
-
+import './main.css';
 
 export default function LebensmittelListe({mySelectedItem}){
 
     const [lebensmittelListe, setLebensmittelListe] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
     const [maxKalorien, setMaxKalorien] = useState(150)
 
     /*     async function getLebensmittelListe(){
@@ -23,6 +23,7 @@ export default function LebensmittelListe({mySelectedItem}){
  */    
 
     useEffect(()=>{
+        setIsLoading(true)
         fetch('http://localhost:3000/lebensmittel')
         .then((res) => res.json())
         .then((data) => setLebensmittelListe(data))
@@ -37,7 +38,8 @@ export default function LebensmittelListe({mySelectedItem}){
 
     const myKalorien = []
     const ausgabeListe = lebensmittelListe.map((item) => {
- //calucluation der verbrauchten kalorien in state speichern
+ 
+     //calucluation der verbrauchten kalorien in state speichern
         
         myKalorien.push(item.kalorien)
         
@@ -51,14 +53,23 @@ export default function LebensmittelListe({mySelectedItem}){
     })
 
         const kalorienGesamt = gesamtKalorien(myKalorien)   
-   
-
-
+        
+/*         const kalorienWarnung = () => {
+            if(maxKalorien  < kalorienGesamt){
+                return <div style={{backgroundColor: "red"}}>Schlecht</div>
+            }else if(maxKalorien + 10 > kalorienGesamt > maxKalorien - 10){
+                return <div style={{backgroundColor: "yellow"}}>Vorsicht</div>
+            }else{
+                return <div style={{backgroundColor: "green"}}>Prima</div>
+            }
+        }
+    */
     return(
         <div className='lebensmittel-list-card'>
             <h3>Meine Liste</h3>
             {ausgabeListe}
             <h3>Gesamtkalorien: {kalorienGesamt} / {maxKalorien}</h3>
+            {/* <div>Ampel: {kalorienWarnung} </div> */}
         </div>
     )
 }
