@@ -5,7 +5,7 @@ export async function getLebensmittel (contentType){
     const data = await client.getEntries({ content_type: contentType, limit:150 });
     const response = data.items;
 
-    console.log(data)
+    //console.log(data)
     return response;
 }
 

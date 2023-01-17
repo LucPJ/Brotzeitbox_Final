@@ -8,6 +8,7 @@ export default function KategorieCard({title, imgSrc, imgAlt}){
     console.log(titleFormated)
     
     const customLink = `/kategorien/${titleFormated}`
+    
    
     return(
         <div className='kategorie-card'>

@@ -1,19 +1,24 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import Navigation from './Navigation';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
-import Navigation from './Navigation';
+import HomePage from './HomePage/HomePage';
+import Searchbar from './Searchbar/Searchbar';
 import './Homepage.css'
+import {useState} from 'react';
 
 export default function Homepage(){
+    const [searchTerm, setSearchTerm] = useState("")
 
     return(
         <>
-            <Header />
+            <Header setSearchTerm={setSearchTerm}/>
             <Navigation/>
                 <h1 className='title'>Brotzeitbox</h1>
                 <p className='description'>Was nehme ich heute in der Schule?</p>
-            <Outlet/>
+            <Outlet />
+            <HomePage />
             <Footer />
         </>
     )

@@ -1,18 +1,20 @@
 import { RouterProvider } from 'react-router-dom';
+import React, { useState } from 'react';
 import './App.css';
 //import Lebensmittel from './components/Lebensmittel/Kategorien'
 import Lebensmittel from './components/Lebensmittel/Lebensmittel';
-import Navigation from './components/Navigation';
 import router from './routing/Router'
+//import Searchbar from './components/Searchbar/Searchbar';
 
 function App() {
+
 
   //initial lebensmittel fetchen...
 
   return (
-    <div className="App">
-   
-        <RouterProvider router={router}/>
+    <div className="App">      
+
+      <RouterProvider router={router}/>
       
     </div>
   )
