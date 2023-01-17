@@ -18,7 +18,6 @@ export default function LebensmittelCard({setMySelectedItem, lebensmittelId, kal
         
         addLebensmittelToList(selectedLebensmittel);
         localStorage.setItem("lebensmittel", JSON.stringify(selectedLebensmittel))
-        // speicher in state
         setMySelectedItem(selectedLebensmittel)
     }
 

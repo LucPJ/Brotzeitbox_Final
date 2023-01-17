@@ -53,23 +53,22 @@ export default function LebensmittelListe({mySelectedItem}){
 
         const kalorienGesamt = gesamtKalorien(myKalorien)   
         
-        const kalorienWarnung = maxKalorien 
-        
-/*          if(kalorienWarnung  < kalorienGesamt){
-            return <div style={{backgroundColor: "red"}}>mal</div>
-        }else if(kalorienWarnung + 10 > kalorienGesamt > kalorienWarnung - 10){
-            return <div style={{backgroundColor: "yellow"}}>cuidado</div>
-        }else{
-            return <div style={{backgroundColor: "green"}}>bien</div>
+        const kalorienWarnung = () => {
+            if(maxKalorien  < kalorienGesamt){
+                return <div style={{backgroundColor: "red"}}>Schlecht</div>
+            }else if(maxKalorien + 10 > kalorienGesamt > maxKalorien - 10){
+                return <div style={{backgroundColor: "yellow"}}>Vorsicht</div>
+            }else{
+                return <div style={{backgroundColor: "green"}}>Prima</div>
+            }
         }
- */
    
     return(
         <div className='lebensmittel-list-card'>
             <h3>Meine Liste</h3>
             {ausgabeListe}
             <h3>Gesamtkalorien: {kalorienGesamt} / {maxKalorien}</h3>
-            <div>{kalorienWarnung}</div>
+            <div>Ampel: {kalorienWarnung} </div>
         </div>
     )
 }

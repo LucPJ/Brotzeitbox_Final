@@ -9,14 +9,18 @@ import KategorieFiltered from "../components/filteredComponents/KategorieFiltere
 import Header from "../components/Header/Header";
 import HeaderItemsDetails from "../components/Header/HeaderItemsDetails";
 import Homepage from "../components/Homepage";
+import HomePage from "../components/HomePage/HomePage";
 import KategorienListe from '../components/Lebensmittel/KategorienListe'
 import Lebensmittel from "../components/Lebensmittel/Lebensmittel";
 import LebensmittelDetails from "../components/Lebensmittel/LebensmittelDetails";
 import FooterItemsDetails from "../components/Footer/FooterItemsDetails"  
+
+
   // You can do this:
    const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Homepage/>}>
+      {/* <Route index element={<HomePage/>}> */}
         <Route path="/:id" element={<HeaderItemsDetails />} />
         <Route path="/lebensmittel" element={<Lebensmittel />} />
         <Route path="/lebensmittel/:lebensmittel" element={<LebensmittelDetails />} />

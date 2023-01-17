@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import './Homepage.css'
 
 export default function Navigation(){
-    return(
+    
+  return(
       <div className="nav" >
         <Link to="/">Home</Link>
         <Link to="/lebensmittel">Lebensmittel</Link>

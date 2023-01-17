@@ -5,12 +5,11 @@ import LebensmittelListe from './LebensmittelListe';
 import './main.css';
 import LebensmittelCard from './LebensmittelCard';
 
-export default function Lebensmittel(){
+export default function Lebensmittel({searchTerm}){
 
     const [lebensmittelItems, setLebensmittelItems] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [mySelectedItem, setMySelectedItem] = useState([]) //helfer state frü rerender
-
     
     async function getAllLebensmittelData(){
         setIsLoading(true)
@@ -21,7 +20,7 @@ export default function Lebensmittel(){
     
     useEffect(()=>{
         getAllLebensmittelData()
-    },[])
+    },[searchTerm])
 
     if(isLoading){
         return <div>loading...</div>
@@ -38,10 +37,9 @@ export default function Lebensmittel(){
             </>
         )
 
-    }) 
+    })
 
-    return(
-        
+    return(    
         <div id='lebensmittel-seite'>     
             <div className='lebensmittel'>       
                 {lebensmittelListe}

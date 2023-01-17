@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import { getLebensmittel } from '../../controller/FetchLebensmittel';
 import '../Homepage.css'
+import Searchbar from '../Searchbar/Searchbar';
 import HeaderItems from './HeaderItems';
 
 
-export default function Header(){
+export default function Header({setSearchTerm}){
 
     const [headerItems, setHeaderItems] = useState([])
     const [isLoading, setIsLoading] = useState(false)
@@ -24,7 +25,7 @@ export default function Header(){
         return <div>loading...</div>
     }
 
-    console.log("header items", headerItems)
+    //console.log("header items", headerItems)
 
     const header = headerItems.map((item) => {
         
@@ -38,7 +39,7 @@ export default function Header(){
     return(
         <div className="header">
             {header}
+            <Searchbar setSearchTerm={setSearchTerm}/>
         </div>
-
     )
 }

@@ -16,6 +16,7 @@
 }
 
 .nav{
+    box-shadow: 0 15px 30px rgba(0,0,0,0.30), 0 11px 8px rgba(0,0,0,0.22);
     background-color: var(--color-secondary);
     display: flex;
     width: 100%;
@@ -45,9 +46,21 @@ a:hover{
 a:link{
     font-size: 1.2em;
     font-weight: 500;
+    color: var(--color-light);
+    text-shadow: 2px 2px 4px #000000;
 }
 
 a:visited{
+    color: var(--color-light);
+    font-weight: 800;
+}
+
+.header a:link{
+    color: var(--color-dark);
+    text-shadow: 2px 2px 4px #fbf8f8;
+}
+
+.header a:visited{
     color: var(--color-dark);
 }
 

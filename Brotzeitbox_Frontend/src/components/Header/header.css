@@ -11,6 +11,34 @@
     font-weight: 300;
 }
 
+.searchbar{
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    height: 50px;
+    margin: auto 0;
+    font-size: 16px;
+}
+
+.searchinput{
+    width: 100%;
+    max-width: 300px;
+    border: solid 1px var(--color-secondary);
+    font-size: 16px;
+    padding-left: 10px;
+    color: var(--color-primary);
+}
+  
+.searchbutton{
+    background-color: var(--color-secondary);
+    border: none;
+    width: 50px;
+    border-radius: 10%;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
 .header-description h1{
     padding-left: 1.7em;
 }
