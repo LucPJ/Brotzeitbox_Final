@@ -36,6 +36,7 @@ export const updateLabensmittel = async (req,res)=>{
 }
 
 export const deleteLebensmittel = async (req,res)=>{
+    console.log("delete fetch")
     const {id} = req.params
     
     const deletedLebensmittel = await Lebensmittel.findByIdAndDelete(id, {new: true})
