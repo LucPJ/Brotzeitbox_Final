@@ -17,7 +17,7 @@
 
 .nav{
     box-shadow: 0 15px 30px rgba(0,0,0,0.30), 0 11px 8px rgba(0,0,0,0.22);
-    background-color: var(--color-secondary);
+    background-color: var(--color-tertiary);
     display: flex;
     width: 100%;
     min-height: 30px;
