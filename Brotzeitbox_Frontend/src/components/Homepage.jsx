@@ -4,7 +4,6 @@ import Navigation from './Navigation';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import HomePage from './HomePage/HomePage';
-import Searchbar from './Searchbar/Searchbar';
 import './Homepage.css'
 import {useState} from 'react';
 

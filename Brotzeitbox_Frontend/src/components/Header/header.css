@@ -26,7 +26,7 @@
     border: solid 1px var(--color-secondary);
     font-size: 16px;
     padding-left: 10px;
-    color: var(--color-primary);
+    color: var(--color-dark);
 }
   
 .searchbutton{
@@ -42,4 +42,3 @@
 .header-description h1{
     padding-left: 1.7em;
 }
-
