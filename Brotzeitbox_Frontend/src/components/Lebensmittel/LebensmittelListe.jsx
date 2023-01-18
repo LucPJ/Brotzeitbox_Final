@@ -8,19 +8,7 @@ export default function LebensmittelListe({mySelectedItem}){
 
     const [lebensmittelListe, setLebensmittelListe] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-    const [maxKalorien, setMaxKalorien] = useState(150)
-
-    /*     async function getLebensmittelListe(){
-        setIsLoading(true)
-        const dataList = await createdLebensmittelListe(data);
-        setLebensmittelListe(dataList)
-        setIsLoading(false)
-
-        useEffect(() => {
-            getLebensmittelListe()
-        }, [])
-    }
- */    
+    const [maxKalorien, setMaxKalorien] = useState(160)
 
     useEffect(()=>{
         setIsLoading(true)
@@ -36,6 +24,14 @@ export default function LebensmittelListe({mySelectedItem}){
 
     console.log('lebensmittel liste!', lebensmittelListe)
 
+    const deleteHandler = async (lebensmittelId) => {
+        
+        const newList = lebensmittelListe.filter((item) => item._id !== lebensmittelId)
+        setLebensmittelListe(newList)
+       
+        await fetch(`http://localhost:3000/lebensmittel/${lebensmittelId}`, { method: 'DELETE' });
+    }
+    
     const myKalorien = []
     const ausgabeListe = lebensmittelListe.map((item) => {
  
@@ -47,29 +43,23 @@ export default function LebensmittelListe({mySelectedItem}){
 
         return(       
             <>
-                <LebensmittelListeCard key={keyID} title={item.title} kalorien={item.kalorien} />
+                <LebensmittelListeCard key={keyID} title={item.title} kalorien={item.kalorien} lebensmittelId={keyID} onDelete={deleteHandler} />
             </> 
         )
     })
 
-        const kalorienGesamt = gesamtKalorien(myKalorien)   
+    const kalorienGesamt = gesamtKalorien(myKalorien)   
         
-/*         const kalorienWarnung = () => {
-            if(maxKalorien  < kalorienGesamt){
-                return <div style={{backgroundColor: "red"}}>Schlecht</div>
-            }else if(maxKalorien + 10 > kalorienGesamt > maxKalorien - 10){
-                return <div style={{backgroundColor: "yellow"}}>Vorsicht</div>
-            }else{
-                return <div style={{backgroundColor: "green"}}>Prima</div>
-            }
-        }
-    */
+    const kalorienWarnung = kalorienGesamt > maxKalorien ? <div className="ampel" style={{backgroundColor: "red"}}></div> : <div className="ampel" style={{backgroundColor: "green"}}></div>
+    const KalorienWarnungNachricht = kalorienGesamt > maxKalorien ? <div className='warnung-nachricht'><p>Sei Vorsichtig!</p></div> : <div className='warnung-nachricht'><p>Du machst es Prima!</p></div>
+
     return(
         <div className='lebensmittel-list-card'>
             <h3>Meine Liste</h3>
             {ausgabeListe}
             <h3>Gesamtkalorien: {kalorienGesamt} / {maxKalorien}</h3>
-            {/* <div>Ampel: {kalorienWarnung} </div> */}
+            <div className='ampel-container'> {kalorienWarnung} </div>
+            <div className='warnung'>{KalorienWarnungNachricht}</div>
         </div>
     )
 }
