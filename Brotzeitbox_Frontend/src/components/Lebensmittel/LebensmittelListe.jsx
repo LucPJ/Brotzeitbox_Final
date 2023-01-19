@@ -50,8 +50,7 @@ export default function LebensmittelListe({mySelectedItem}){
 
     const kalorienGesamt = gesamtKalorien(myKalorien)   
         
-    const kalorienWarnung = kalorienGesamt > maxKalorien ? <div className="ampel" style={{backgroundColor: "red"}}></div> : <div className="ampel" style={{backgroundColor: "green"}}></div>
-    const KalorienWarnungNachricht = kalorienGesamt > maxKalorien ? <div className='warnung-nachricht'><p>Sei Vorsichtig!</p></div> : <div className='warnung-nachricht'><p>Du machst es Prima!</p></div>
+    const kalorienWarnung = kalorienGesamt > maxKalorien ? <div className="ampel" style={{backgroundColor: "red"}}><div className='warnung-nachricht'><p>Sei Vorsichtig!</p></div></div> : <div className="ampel" style={{backgroundColor: "green"}}><div className='warnung-nachricht'><p>Du machst es Prima!</p></div></div>
 
     return(
         <div className='lebensmittel-list-card'>
@@ -59,7 +58,6 @@ export default function LebensmittelListe({mySelectedItem}){
             {ausgabeListe}
             <h3>Gesamtkalorien: {kalorienGesamt} / {maxKalorien}</h3>
             <div className='ampel-container'> {kalorienWarnung} </div>
-            <div className='warnung'>{KalorienWarnungNachricht}</div>
         </div>
     )
 }

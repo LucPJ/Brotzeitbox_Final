@@ -14,7 +14,7 @@ export default function LebensmittelListeCard({title, kalorien, lebensmittelId, 
     return(
         <div>
             <ul className='lebensmittel-list'>
-                <li>{title} enthält {kalorien} kcal pro 100g 
+                <li>{title} - {kalorien} kcal pro 100g 
                     <button className='btn' onClick={deleteLebensmittel}>X</button>
                 </li>
             </ul>
