@@ -14,6 +14,12 @@
     margin: 1em auto 3em;
     border: solid 0.5px var(--color-secondary);
     border-radius: 5px;  
+
+    box-shadow: 0 15px 30px rgba(0,0,0,0.30), 0 11px 8px rgba(0,0,0,0.22);
+    display: block;
+    transition-duration: 1s;
+    border: solid 1px var(--color-light);
+
 }
 
 .filtered-kategorie-card h3{

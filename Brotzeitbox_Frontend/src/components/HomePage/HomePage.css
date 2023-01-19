@@ -1,5 +1,5 @@
 .home{
-    min-height: 40vh;
+    min-height: 30vh;
     display: flex;
     justify-content: center;
     margin: 3em;
@@ -22,7 +22,7 @@
 
 .home-img{
     animation-name: myAnimation;
-    animation-duration: 15s;
+    animation-duration: 20s;
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
     animation-delay: 1s;
